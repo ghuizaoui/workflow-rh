@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>États pour Gardiennage</h2>
+    <div *ngIf="loading">Chargement...</div>
+    <div *ngIf="error">{{ error }}</div>
+    <table class="table table-striped" *ngIf="!loading && etats.length > 0">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Matricule</th>
+          <th>Type Demande</th>
+          <th>Workflow ID</th>
+          <th>Date Sortie</th>
+          <th>Heure Sortie</th>
+          <th>Date Retour</th>
+          <th>Heure Retour</th>
+          <th>Durée (heures)</th>
+          <th>Date Génération</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let etat of etats">
+          <td>{{ etat.nomEmploye }}</td>
+          <td>{{ etat.prenomEmploye }}</td>
+          <td>{{ etat.matriculeEmploye }}</td>
+          <td>{{ etat.typeDemande }}</td>
+          <td>{{ etat.workflowId }}</td>
+          <td>{{ etat.dateSortie | date:'shortDate' }}</td>
+          <td>{{ etat.heureSortie }}</td>
+          <td>{{ etat.dateRetour | date:'shortDate' }}</td>
+          <td>{{ etat.heureRetour }}</td>
+          <td>{{ etat.dureeHeures ? (etat.dureeHeures | number:'1.2-2') : 'N/A' }}</td>
+          <td>{{ etat.dateGeneration | date:'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="!loading && etats.length === 0">Aucun état disponible.</p>
+  </div>

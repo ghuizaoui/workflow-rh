@@ -1,0 +1,1 @@
+export type StatutDemande = 'EN_COURS' | 'VALIDEE' | 'REFUSEE' | 'ANNULEE' | string;
