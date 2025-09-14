@@ -1,5 +1,5 @@
 // src/app/historique-demandes/historique-demandes.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { DemandeService } from '../services/demande/demande.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,7 +11,8 @@ import { Demande } from '../models/Demande.model';
   standalone: true,
   imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './historique-demandes.component.html',
-  styleUrls: ['./historique-demandes.component.css']
+  styleUrls: ['./historique-demandes.component.css'],
+  encapsulation:ViewEncapsulation.None
 })
 export class HistoriqueDemandesComponent implements OnInit {
 
