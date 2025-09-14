@@ -128,7 +128,7 @@
 </div>
 
 <!-- MODAL : ADD / EDIT EMPLOYEE -->
-<div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="addEmployeeLabel" aria-hidden="true">
+<div style="z-index: 1055;" class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="addEmployeeLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <form class="modal-content border-0 needs-validation" novalidate (ngSubmit)="saveEmployee(f)" #f="ngForm">
       <div class="modal-header bg-primary">
@@ -244,3 +244,14 @@
     <button class="btn btn-secondary w-100">Apply</button>
   </div>
 </div>
+
+
+
+<app-popup  *ngIf="showPopup"
+[title]="popupTitle"
+[message]="popupMessage"
+[isSuccess]="popupIsSuccess"
+[redirectPath]="popupRedirectPath"
+[showCancelButton]="showCancelButton"
+(closed)="closePopup()">
+</app-popup>
